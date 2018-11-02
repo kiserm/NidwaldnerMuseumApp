@@ -31,7 +31,7 @@ export default class UserFormScreen extends React.Component {
               Willkommen im Salzmagazin
             </Text>
             <Text style={styles.questionText}>
-              Dein Name
+              Wie heisst Du?
             </Text>
           </View>          
         </View>
@@ -45,7 +45,7 @@ export default class UserFormScreen extends React.Component {
               Willkommen im Winkelriedhaus
             </Text>
             <Text style={styles.questionText}>
-              Dein Name
+              Wie heisst Du?
             </Text>
           </View>          
         </View>
