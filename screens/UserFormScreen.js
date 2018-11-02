@@ -17,7 +17,7 @@ export default class UserFormScreen extends React.Component {
               Willkommen in der Festung Fürigen
             </Text>
             <Text style={styles.questionText}>
-              Dein Name
+              Wie heisst Du?
             </Text>
           </View>          
         </View>  
