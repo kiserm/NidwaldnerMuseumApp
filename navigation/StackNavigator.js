@@ -5,6 +5,8 @@ import QuizListScreen from '../screens/QuizListScreen';
 import FestungHomeScreen from '../screens/FestungHomeScreen';
 import SalzmagazinHomeScreen from '../screens/SalzmagazinHomeScreen';
 import WinkelriedhausHomeScreen from '../screens/WinkelriedhausHomeScreen';
+import SalzmagazinStation1FrageScreen from '../screens/SalzmagazinStation1FrageScreen';
+
 
 
 const NavigationStack = createStackNavigator(
@@ -15,6 +17,7 @@ const NavigationStack = createStackNavigator(
     FestungHome: FestungHomeScreen,
     SalzmagazinHome: SalzmagazinHomeScreen,
     WinkelriedhausHome: WinkelriedhausHomeScreen,
+    SalzmagazinStation1Frage: SalzmagazinStation1FrageScreen,
   },
   {
     initialRouteName: 'Home',

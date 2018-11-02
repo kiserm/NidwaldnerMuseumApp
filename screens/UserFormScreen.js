@@ -138,11 +138,11 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginLeft: 40,
     marginRight: 40,
-    marginBottom: 200,
+    marginBottom: 500,
     backgroundColor: 'rgba(96,100,109, 1)',
     borderColor: 'rgba(96,100,109, 1)',
     borderWidth: 2,
-    borderRadius: 10       
+    borderRadius: 10,       
   },
   textInput:{
     width: 200, 

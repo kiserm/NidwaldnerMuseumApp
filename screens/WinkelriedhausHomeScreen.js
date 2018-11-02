@@ -9,6 +9,7 @@ export default class WinkelriedhausHomeScreen extends React.Component {
 
   state = {
     username: this.props.navigation.getParam('Username'),
+    score: 0
   };
 
   render() {
@@ -17,7 +18,8 @@ export default class WinkelriedhausHomeScreen extends React.Component {
         
         <View style={styles.welcomeTextContainer}>
           <Text>
-            {this.state.username} winkel
+            {this.state.username} 
+            {++this.state.score}
           </Text>
         </View>     
         
