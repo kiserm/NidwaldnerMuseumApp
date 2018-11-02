@@ -1,14 +1,24 @@
 import React from 'react';
-import {Image,StyleSheet,Text,View,TouchableHighlight,Button,Linking} from 'react-native';
+import {Image,StyleSheet,Text,View,TouchableHighlight,Button,Linking,TextInput} from 'react-native';
 
 
 export default class UserFormScreen extends React.Component {
+  // set a title for the navigation bar at the top
   static navigationOptions = {
-    title: 'Wie heisst Du?',
+    title: 'Willkommen!',
   };
 
-  render() {
-    
+  // we need a state and an event handler for the textinput
+  state = {
+    inputValue: '',
+  };
+  _handleTextChange = inputValue => {
+    this.setState({ inputValue });
+  };
+
+
+  render() {   
+    // test which quiz the user has chosen and render accordingly 
     if(this.props.navigation.getParam('QuizName') === 'Festung'){
       return (
         <View style={styles.wholeScreen}>
@@ -19,7 +29,19 @@ export default class UserFormScreen extends React.Component {
             <Text style={styles.questionText}>
               Wie heisst Du?
             </Text>
-          </View>          
+            {/*Handle the text input with events and store it in the state object. */}
+            <TextInput 
+              value={this.state.inputValue}
+              onChangeText={this._handleTextChange}
+              style={{ width: 200, height: 44, padding: 8, borderWidth: 2, 
+                        borderColor: 'rgba(96,100,109, 1)', borderRadius: 10, 
+                        textAlign: 'center', marginVertical: 50 }}
+            />
+          </View>    
+          {/* Set a button to get to the specific quiz with a state which name the user has */}
+          <View style = {styles.toQuizButton}>
+            <Button title="Start Quiz!" color="#fff" onPress={() => this.props.navigation.navigate('FestungHome',{ Username: this.state.inputValue })}/> 
+          </View>  
         </View>  
       );
     }
@@ -27,13 +49,25 @@ export default class UserFormScreen extends React.Component {
       return (
         <View style={styles.wholeScreen}>
           <View style={styles.titleView}>
-          <Text style={styles.titleText}>
+            <Text style={styles.titleText}>
               Willkommen im Salzmagazin
             </Text>
             <Text style={styles.questionText}>
               Wie heisst Du?
             </Text>
-          </View>          
+            {/*Handle the text input with events and store it in the state object. */}
+            <TextInput 
+              value={this.state.inputValue}
+              onChangeText={this._handleTextChange}
+              style={{ width: 200, height: 44, padding: 8, borderWidth: 2, 
+                        borderColor: 'rgba(96,100,109, 1)', borderRadius: 10, 
+                        textAlign: 'center', marginVertical: 50 }}
+            />
+          </View>    
+          {/* Set a button to get to the specific quiz with a state which name the user has */}
+          <View style = {styles.toQuizButton}>
+            <Button title="Start Quiz!" color="#fff" onPress={() => this.props.navigation.navigate('SalzmagazinHome',{ Username: this.state.inputValue })}/> 
+          </View>  
         </View>
       );
     }
@@ -47,7 +81,19 @@ export default class UserFormScreen extends React.Component {
             <Text style={styles.questionText}>
               Wie heisst Du?
             </Text>
-          </View>          
+            {/*Handle the text input with events and store it in the state object. */}
+            <TextInput 
+              value={this.state.inputValue}
+              onChangeText={this._handleTextChange}
+              style={{ width: 200, height: 44, padding: 8, borderWidth: 2, 
+                        borderColor: 'rgba(96,100,109, 1)', borderRadius: 10, 
+                        textAlign: 'center', marginVertical: 50 }}
+            />
+          </View>    
+          {/* Set a button to get to the specific quiz with a state which name the user has */}
+          <View style = {styles.toQuizButton}>
+            <Button title="Start Quiz!" color="#fff" onPress={() => this.props.navigation.navigate('WinkelriedhausHome',{ Username: this.state.inputValue })}/> 
+          </View>  
         </View>
       );
     }
@@ -73,7 +119,7 @@ const styles = StyleSheet.create({
   titleView: {
     alignItems: 'center',
     marginHorizontal: 50,
-    marginTop: 100,
+    marginTop: 50,
   },
   titleText: {
     fontSize: 35,
@@ -83,10 +129,25 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   questionText: {
-    fontSize: 20,
+    fontSize: 25,
     color: 'rgba(96,100,109, 1)',
     lineHeight: 45,
     textAlign: 'center',
     fontWeight: 'bold',
-  }
+    marginTop: 50,
+  },
+  toQuizButton: {
+    fontSize: 5,
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginTop: 30,
+    marginLeft: 40,
+    marginRight: 40,
+    marginBottom: 200,
+    backgroundColor: 'rgba(96,100,109, 1)',
+    borderColor: 'rgba(96,100,109, 1)',
+    borderWidth: 2,
+    borderRadius: 10       
+  },
 });

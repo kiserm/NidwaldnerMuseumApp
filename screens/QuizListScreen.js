@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet,Text,View,Button} from 'react-native';
 
 export default class QuizListScreen extends React.Component {  
+  // set a title for the navigation bar at the top
   static navigationOptions = {
     title: 'Wähle dein Quiz!',
   };

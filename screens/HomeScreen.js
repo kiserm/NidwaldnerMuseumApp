@@ -2,6 +2,11 @@ import React from 'react';
 import {Image,StyleSheet,Text,View,TouchableHighlight,Button,Linking} from 'react-native';
 
 export default class HomeScreen extends React.Component {
+  // set a title for the navigation bar at the top
+  static navigationOptions = {
+    title: 'Home',
+  };
+
   render() {
     return (      
       <View style={styles.wholeScreen}>
