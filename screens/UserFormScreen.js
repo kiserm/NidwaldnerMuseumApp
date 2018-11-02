@@ -33,9 +33,7 @@ export default class UserFormScreen extends React.Component {
             <TextInput 
               value={this.state.inputValue}
               onChangeText={this._handleTextChange}
-              style={{ width: 200, height: 44, padding: 8, borderWidth: 2, 
-                        borderColor: 'rgba(96,100,109, 1)', borderRadius: 10, 
-                        textAlign: 'center', marginVertical: 50 }}
+              style={styles.textInput}
             />
           </View>    
           {/* Set a button to get to the specific quiz with a state which name the user has */}
@@ -59,9 +57,7 @@ export default class UserFormScreen extends React.Component {
             <TextInput 
               value={this.state.inputValue}
               onChangeText={this._handleTextChange}
-              style={{ width: 200, height: 44, padding: 8, borderWidth: 2, 
-                        borderColor: 'rgba(96,100,109, 1)', borderRadius: 10, 
-                        textAlign: 'center', marginVertical: 50 }}
+              style={styles.textInput}
             />
           </View>    
           {/* Set a button to get to the specific quiz with a state which name the user has */}
@@ -85,9 +81,7 @@ export default class UserFormScreen extends React.Component {
             <TextInput 
               value={this.state.inputValue}
               onChangeText={this._handleTextChange}
-              style={{ width: 200, height: 44, padding: 8, borderWidth: 2, 
-                        borderColor: 'rgba(96,100,109, 1)', borderRadius: 10, 
-                        textAlign: 'center', marginVertical: 50 }}
+              style={styles.textInput}
             />
           </View>    
           {/* Set a button to get to the specific quiz with a state which name the user has */}
@@ -131,7 +125,7 @@ const styles = StyleSheet.create({
   questionText: {
     fontSize: 25,
     color: 'rgba(96,100,109, 1)',
-    lineHeight: 45,
+    lineHeight: 30,
     textAlign: 'center',
     fontWeight: 'bold',
     marginTop: 50,
@@ -141,7 +135,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'center',
     fontWeight: 'bold',
-    marginTop: 30,
+    marginTop: 50,
     marginLeft: 40,
     marginRight: 40,
     marginBottom: 200,
@@ -150,4 +144,14 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 10       
   },
+  textInput:{
+    width: 200, 
+    height: 44, 
+    padding: 8, 
+    borderWidth: 2,
+    borderColor: 'rgba(96,100,109, 1)', 
+    borderRadius: 10, 
+    textAlign: 'center', 
+    marginVertical: 10,
+  }
 });
