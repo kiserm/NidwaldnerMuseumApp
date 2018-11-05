@@ -2,49 +2,63 @@ import React from 'react';
 import {Image,StyleSheet,Text,View,TouchableHighlight,Button,Linking} from 'react-native';
 
 
-export default class SalzmagazinStation1FrageScreen extends React.Component {
+export default class SalzmagazinStation1AnswerScreen extends React.Component {
   // set a title for the navigation bar at the top
   static navigationOptions = {
     title: 'Salzmagazin Quiz',
   };
   state = {
-    username: this.props.navigation.getParam('Username'),
+    username: this.props.navigation.getParam('username'),
+    answer: this.props.navigation.getParam('answer'),
   };
 
-
   render() {
-    return (      
-      <View style={styles.wholeScreen}>
-        
-        <View style={styles.titleView}>
-          <Text style={styles.titleText}>
-            Station 1 {'\n'}
-            Schule damals und heute            
-          </Text>          
-        </View>  
 
-        <Text style={styles.question}>
-        Nun {this.state.username}, was liess Melchior Lussi in Stans für sich bauen?
-        </Text>
+    if(this.state.answer === 'Winkelriedhaus'){
+      return (      
+        <View style={styles.wholeScreen}>
+          
+          <View style={styles.titleView}>
+            <Text style={styles.titleText}>
+              Station 1 {'\n'}
+              Schule damals und heute            
+            </Text>          
+          </View>  
 
-        <View style = {styles.answerButton}>
-        <Button title='A   Stanserhornbahn' color="#fff" onPress={() => this.props.navigation.navigate('SalzmagazinStation1Answer',{ answer: 'Stanserhornbahn', username: this.state.username })} />
+          <Text style={styles.question}>
+          Nun {this.state.username}, gratuliere Du hast diese Frage Richtig beantwortet!
+          </Text>
+
+          <View style = {styles.answerButton}>
+          <Button title='Weiter' color="#fff" onPress={() => this.props.navigation.navigate('SalzmagazinStation2Question',{ username: this.state.username })}/>
+          </View>
         </View>
+      )
+    }
 
-        <View style = {styles.answerButton}>
-        <Button title='B   Winkelriedhaus' color="#fff" onPress={() => this.props.navigation.navigate('SalzmagazinStation1Answer',{ answer: 'Winkelriedhaus', username: this.state.username })}/>
-        </View>
+    else {
+      return (      
+        <View style={styles.wholeScreen}>
+          
+          <View style={styles.titleView}>
+            <Text style={styles.titleText}>
+              Station 1 {'\n'}
+              Schule damals und heute            
+            </Text>          
+          </View>  
 
-        <View style = {styles.answerButton}>
-        <Button title='C   Kollegium Stans' color="#fff" onPress={() => this.props.navigation.navigate('SalzmagazinStation1Answer',{ answer: 'Kollegium Stans', username: this.state.username })}/>
-        </View>
+          <Text style={styles.question}>
+          Nun {this.state.username}, dies war leider die falsche Antwort. Bei der nächsten Frage wirst Du sicher
+          besser abschneiden!
+          </Text>
 
-        <View style = {styles.lastAnswerButton}>
-        <Button title='D   Frauenkloster Stans' color="#fff" onPress={() => this.props.navigation.navigate('SalzmagazinStation1Answer',{ answer: 'Frauenkloster Stans', username: this.state.username })}/>
-        </View>
+          <View style = {styles.answerButton}>
+          <Button title='Weiter' color="#fff" onPress={() => this.props.navigation.navigate('SalzmagazinStation2Question',{ username: this.state.username })}/>
+          </View>
 
-    </View>         
-    );
+      </View>         
+      );
+    }
   }
 }
 
